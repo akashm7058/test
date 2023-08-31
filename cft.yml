@@ -7,7 +7,7 @@ Parameters:
     Description: s3://samplegrp4/newsamplegrp/
   RDSConnection:
     Type: String
-    Description: arn:aws:rds:us-east-1:077117346067:db:github-database
+    Description: arn:aws:rds:us-east-1:077117346087:db:github-database
 
 Resources:
 
