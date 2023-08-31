@@ -1,0 +1,40 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Stack to process S3 and RDS data with Glue and query with Athena
+
+Parameters:
+  SourceS3Bucket:
+    Type: String
+    Description: s3://samplegrp4/newsamplegrp/
+  RDSConnection:
+    Type: String
+    Description: arn:aws:rds:us-east-1:077117346067:db:github-database
+
+Resources:
+
+  # Glue Job
+  GlueJob:
+    Type: AWS::Glue::Job
+    Properties:
+      Name: MyGlueJob
+      Command:
+        Name: glueel
+        ScriptLocation: s3://samplegrp4/ingestionscript.py
+      DefaultArguments:
+        "--job-language": "python"
+        # "--TempDir": !Sub "s3://${AWS::AccountId}-glue-temp/"
+      Connections:
+        Connections: !Ref RDSConnection
+      MaxRetries: 0
+      AllocatedCapacity: 4 #dpu
+      ExecutionProperty:
+        MaxConcurrentRuns: 1
+      Timeout: 120
+
+  # Glue Database
+  GlueDatabase:
+    Type: AWS::Glue::Database
+    Properties:
+      CatalogId: !Ref AWS::	051193636181 #aws details
+      DatabaseInput:
+        Name: testdatabase
+
