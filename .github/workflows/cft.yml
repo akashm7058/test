@@ -10,7 +10,7 @@ Parameters:
   RDSConnection:
     Type: String
     Description: RDS connection 
-    Default : arn:aws:rds:us-east-1:077117346087:db:github-database
+    Default : arn:aws:rds:us-east-1:077117346067:db:github-database
 
 Resources:
 
