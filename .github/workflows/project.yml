@@ -13,6 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@master
 
+      
       - name: Print Environment Variables
         run: |
           echo "AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}"
