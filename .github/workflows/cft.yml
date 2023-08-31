@@ -32,6 +32,7 @@ Resources:
       ExecutionProperty:
         MaxConcurrentRuns: 1
       Timeout: 120
+      Role: arn:aws:iam::051193636181:role/LabRole
 
   # Glue Database
   GlueDatabase:
