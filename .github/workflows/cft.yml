@@ -4,7 +4,7 @@ Description: Stack to process S3 and RDS data with Glue and query with Athena
 Parameters:
   SourceS3Bucket:
     Type: String
-    Description:   SOURCE BUCKET
+    Description:   Source Bucket
     Default: s3://samplegrp4/newsamplegrp/
 
   RDSConnection:
