@@ -34,7 +34,7 @@ Resources:
   GlueDatabase:
     Type: AWS::Glue::Database
     Properties:
-      CatalogId: !Ref AWS::	051193636181 #aws details
+      CatalogId: !Ref AWS::AccountId
       DatabaseInput:
         Name: testdatabase
 
